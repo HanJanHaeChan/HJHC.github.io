@@ -8,94 +8,77 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
-        /* Inter 폰트 적용 */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* 활성화된 메뉴 스타일 */
         .nav-active {
-            background-color: #4a5568; /* bg-gray-700 */
+            background-color: #4a5568;
+        }
+        .drop-zone {
+            border: 2px dashed #4a5568;
+            padding: 20px;
+            text-align: center;
+            background: #edf2f7;
+        }
+        .drop-zone.dragover {
+            background: #e2e8f0;
+            border-color: #2b6cb0;
         }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- 전체 레이아웃 컨테이너 -->
     <div class="flex flex-col md:flex-row min-h-screen">
-
         <!-- 왼쪽 사이드바 (작은 창) -->
         <aside class="w-full md:w-1/4 lg:w-1/5 bg-[#2d3748] text-white p-8 sticky top-0 h-screen flex flex-col">
-            <!-- 프로필 섹션 -->
             <div class="text-center mb-12">
                 <img src="https://placehold.co/120x120/e2e8f0/2d3748?text=ME" alt="프로필 이미지" class="rounded-full w-32 h-32 mx-auto mb-4 border-4 border-gray-400">
-                <h1 class="text-2xl font-bold">안해찬</h1>
-                <p class="text-sm text-gray-400">I'm interested in Computer Science, Photography, and Traveling.</p>
+                <h1 class="text-2xl font-bold">이름</h1>
+                <p class="text-sm text-gray-400">웹 개발자</p>
             </div>
-
-            <!-- 네비게이션 메뉴 -->
             <nav id="main-nav" class="flex-grow">
                 <ul class="space-y-4">
-                    <!-- data-page 속성을 이용해 어떤 페이지를 로드할지 결정합니다 -->
-                    <li>
-                        <a href="#" data-page="portfolio" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">PORTFOLIO</a>
-                    </li>
-                    <li>
-                        <a href="#" data-page="about" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ABOUT</a>
-                    </li>
-                    <li>
-                        <a href="#" data-page="contact" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">CONTACT</a>
-                    </li>
+                    <li><a href="#" data-page="portfolio" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">PORTFOLIO</a></li>
+                    <li><a href="#" data-page="about" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ABOUT</a></li>
+                    <li><a href="#" data-page="contact" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">CONTACT</a></li>
+                    <li><a href="#" data-page="add-project" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ADD PROJECT</a></li>
                 </ul>
             </nav>
-
-            <!-- 푸터 (소셜 링크 등) -->
             <div class="text-center text-sm">
                 <p>© 2025 Your Name. All Rights Reserved.</p>
             </div>
         </aside>
 
-        <!-- 오른쪽 메인 콘텐츠 (큰 창) -->
-        <!-- 이 영역의 내용이 JavaScript에 의해 동적으로 변경됩니다. -->
         <main id="main-content" class="w-full md:w-3/4 lg:w-4/5 p-8 md:p-12 overflow-y-auto">
             <!-- 초기 콘텐츠가 여기에 로드됩니다. -->
         </main>
     </div>
 
     <script>
-        // 메인 콘텐츠 영역과 네비게이션 링크들을 가져옵니다.
         const mainContent = document.getElementById('main-content');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        // 각 페이지에 해당하는 HTML 콘텐츠를 객체로 관리합니다.
+        let projects = [
+            { id: 1, title: "프로젝트 제목 1", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/a0aec0/ffffff?text=Project+1" },
+            { id: 2, title: "프로젝트 제목 2", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/718096/ffffff?text=Project+2" },
+            { id: 3, title: "프로젝트 제목 3", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/4a5568/ffffff?text=Project+3" }
+        ];
+
         const pageContents = {
             portfolio: `
                 <section id="portfolio">
                     <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">Portfolio</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- 포트폴리오 아이템 1 -->
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                            <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Project+1" alt="프로젝트 1 이미지" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2">프로젝트 제목 1</h3>
-                                <p class="text-gray-600">프로젝트에 대한 간단한 설명입니다. 사용된 기술 스택 등을 요약합니다.</p>
+                    <div id="project-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${projects.map(project => `
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                                <img src="${project.image}" alt="${project.title} 이미지" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
+                                    <p class="text-gray-600">${project.content}</p>
+                                    <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onclick="deleteProject(${project.id})">삭제</button>
+                                </div>
                             </div>
-                        </div>
-                        <!-- 포트폴리오 아이템 2 -->
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                            <img src="https://placehold.co/600x400/718096/ffffff?text=Project+2" alt="프로젝트 2 이미지" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2">프로젝트 제목 2</h3>
-                                <p class="text-gray-600">프로젝트에 대한 간단한 설명입니다. 사용된 기술 스택 등을 요약합니다.</p>
-                            </div>
-                        </div>
-                        <!-- 포트폴리오 아이템 3 -->
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                            <img src="https://placehold.co/600x400/4a5568/ffffff?text=Project+3" alt="프로젝트 3 이미지" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2">프로젝트 제목 3</h3>
-                                <p class="text-gray-600">프로젝트에 대한 간단한 설명입니다. 사용된 기술 스택 등을 요약합니다.</p>
-                            </div>
-                        </div>
+                        `).join('')}
                     </div>
                 </section>
             `,
@@ -103,12 +86,8 @@
                 <section id="about">
                     <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">About Me</h2>
                     <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="mb-4">
-                            Computer Science, Cyber Security, Photography, Traveling 등 많은 분야에 관심을 가지고 있습니다.
-                        </p>
-                        <p>
-                            숙련도가 높지 않은만큼 미숙하지만 숙련자 못지않게 열심히 배우고 성장해 나가고 있습니다.
-                        </p>
+                        <p class="mb-4">안녕하세요! 저는 창의적인 문제 해결을 즐기는 웹 개발자입니다.</p>
+                        <p>주로 사용하는 기술은 HTML, CSS, JavaScript입니다.</p>
                     </div>
                 </section>
             `,
@@ -116,59 +95,116 @@
                 <section id="contact">
                     <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">Contact</h2>
                     <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="mb-4">
-                            저에 대해 더 궁금한 점이 있거나 협업 제안 등 문의사항이 있다면 아래 연락처로 편하게 연락 주세요.
-                        </p>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                <span>email@example.com</span>
-                            </li>
-                            <li class="flex items-center">
-                                 <svg class="w-6 h-6 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                <span>010-1234-5678</span>
-                            </li>
-                             <li class="flex items-center">
-                                <svg class="w-6 h-6 mr-3 text-blue-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <path clip-rule="evenodd" fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.097 4.903a.75.75 0 0 1 .841.543l.003.004.004.01.003.008.002.005a23.318 23.318 0 0 1 3.483 5.216.75.75 0 0 1-1.35.706 21.812 21.812 0 0 0-2.986-4.813l-.002-.003-.003-.004a.75.75 0 0 1 .543-.841Zm-2.32 1.63a.75.75 0 0 1 .75-.057l.007.003 4.5 1.5a.75.75 0 0 1 .184 1.342l-4.5 2.25a.75.75 0 0 1-1.025-.875l.004-.009.99-1.982-2.13-1.065a.75.75 0 0 1-.057-.75Zm-2.83.825a.75.75 0 0 1 .84-.543l.004.002.008.004.01.004.005.002a23.315 23.315 0 0 1 3.484 5.216.75.75 0 0 1-1.35.706A21.816 21.816 0 0 0 8.21 8.94l-.003-.004a.75.75 0 0 1 .543-.84Z"></path>
-                                </svg>
-                                <span>GitHub: your-github-id</span>
-                            </li>
-                        </ul>
+                        <p class="mb-4">문의사항이 있다면 연락 주세요.</p>
+                        <ul class="space-y-2"><li><span>email@example.com</span></li><li><span>010-1234-5678</span></li></ul>
+                    </div>
+                </section>
+            `,
+            'add-project': `
+                <section id="add-project">
+                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">새 프로젝트 추가</h2>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <form id="project-form" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">제목</label>
+                                <input type="text" id="project-title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">내용</label>
+                                <textarea id="project-content" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="3"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">사진 업로드</label>
+                                <div id="drop-zone" class="drop-zone mt-1">드래그하거나 클릭해서 파일 선택</div>
+                                <input type="file" id="file-input" accept="image/*" class="hidden">
+                                <img id="preview" class="mt-2 max-h-48" style="display:none;">
+                            </div>
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">업로드</button>
+                        </form>
                     </div>
                 </section>
             `
         };
 
-        // 페이지 콘텐츠를 로드하고 렌더링하는 함수
         function loadContent(page) {
-            // main-content 영역의 내용을 해당 페이지의 HTML로 교체합니다.
             mainContent.innerHTML = pageContents[page] || pageContents.portfolio;
-
-            // 현재 활성화된 링크를 표시하는 로직
             navLinks.forEach(link => {
-                if (link.dataset.page === page) {
-                    link.classList.add('nav-active');
-                } else {
-                    link.classList.remove('nav-active');
-                }
+                if (link.dataset.page === page) link.classList.add('nav-active');
+                else link.classList.remove('nav-active');
             });
+
+            if (page === 'add-project') {
+                const dropZone = document.getElementById('drop-zone');
+                const fileInput = document.getElementById('file-input');
+                const preview = document.getElementById('preview');
+                const form = document.getElementById('project-form');
+
+                dropZone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    dropZone.classList.add('dragover');
+                });
+
+                dropZone.addEventListener('dragleave', () => {
+                    dropZone.classList.remove('dragover');
+                });
+
+                dropZone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    dropZone.classList.remove('dragover');
+                    const file = e.dataTransfer.files[0];
+                    handleFile(file);
+                });
+
+                dropZone.addEventListener('click', () => fileInput.click());
+
+                fileInput.addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    handleFile(file);
+                });
+
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const title = document.getElementById('project-title').value;
+                    const content = document.getElementById('project-content').value;
+                    const image = preview.src || 'https://placehold.co/600x400/ffffff?text=No+Image';
+
+                    const newProject = {
+                        id: Date.now(),
+                        title,
+                        content,
+                        image
+                    };
+                    projects.push(newProject);
+                    loadContent('portfolio');
+                });
+            }
         }
 
-        // 각 네비게이션 링크에 클릭 이벤트 리스너를 추가합니다.
+        function handleFile(file) {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    document.getElementById('preview').src = e.target.result;
+                    document.getElementById('preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function deleteProject(id) {
+            projects = projects.filter(project => project.id !== id);
+            loadContent('portfolio');
+        }
+
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
-                // a 태그의 기본 동작(페이지 이동)을 막습니다.
                 event.preventDefault();
                 const page = link.dataset.page;
                 loadContent(page);
             });
         });
 
-        // 웹사이트가 처음 로드될 때 'portfolio' 페이지를 기본으로 보여줍니다.
         window.addEventListener('DOMContentLoaded', () => {
             loadContent('portfolio');
         });
     </script>
-</body>
-</html>
