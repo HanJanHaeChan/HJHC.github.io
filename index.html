@@ -3,28 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 포트폴리오</title>
+    <title>내 블로그</title>
     <!-- Tailwind CSS CDN 로드 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .nav-active {
-            background-color: #4a5568;
-        }
-        .drop-zone {
-            border: 2px dashed #4a5568;
-            padding: 20px;
-            text-align: center;
-            background: #edf2f7;
-        }
-        .drop-zone.dragover {
-            background: #e2e8f0;
-            border-color: #2b6cb0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -38,10 +21,10 @@
             </div>
             <nav id="main-nav" class="flex-grow">
                 <ul class="space-y-4">
-                    <li><a href="#" data-page="portfolio" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">PORTFOLIO</a></li>
+                    <li><a href="#" data-page="blog" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">BLOG</a></li>
                     <li><a href="#" data-page="about" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ABOUT</a></li>
                     <li><a href="#" data-page="contact" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">CONTACT</a></li>
-                    <li><a href="#" data-page="add-project" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ADD PROJECT</a></li>
+                    <li><a href="#" data-page="add-post" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ADD POST</a></li>
                 </ul>
             </nav>
             <div class="text-center text-sm">
@@ -54,157 +37,11 @@
         </main>
     </div>
 
-    <script>
-        const mainContent = document.getElementById('main-content');
-        const navLinks = document.querySelectorAll('.nav-link');
+    <script src="script.js"></script>
 
-        let projects = [
-            { id: 1, title: "프로젝트 제목 1", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/a0aec0/ffffff?text=Project+1" },
-            { id: 2, title: "프로젝트 제목 2", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/718096/ffffff?text=Project+2" },
-            { id: 3, title: "프로젝트 제목 3", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/4a5568/ffffff?text=Project+3" }
-        ];
-
-        const pageContents = {
-            portfolio: `
-                <section id="portfolio">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">Portfolio</h2>
-                    <div id="project-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        ${projects.map(project => `
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                                <img src="${project.image}" alt="${project.title} 이미지" class="w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
-                                    <p class="text-gray-600">${project.content}</p>
-                                    <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onclick="deleteProject(${project.id})">삭제</button>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </section>
-            `,
-            about: `
-                <section id="about">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">About Me</h2>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="mb-4">안녕하세요! 저는 창의적인 문제 해결을 즐기는 웹 개발자입니다.</p>
-                        <p>주로 사용하는 기술은 HTML, CSS, JavaScript입니다.</p>
-                    </div>
-                </section>
-            `,
-            contact: `
-                <section id="contact">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">Contact</h2>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="mb-4">문의사항이 있다면 연락 주세요.</p>
-                        <ul class="space-y-2"><li><span>email@example.com</span></li><li><span>010-1234-5678</span></li></ul>
-                    </div>
-                </section>
-            `,
-            'add-project': `
-                <section id="add-project">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">새 프로젝트 추가</h2>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <form id="project-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">제목</label>
-                                <input type="text" id="project-title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">내용</label>
-                                <textarea id="project-content" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="3"></textarea>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">사진 업로드</label>
-                                <div id="drop-zone" class="drop-zone mt-1">드래그하거나 클릭해서 파일 선택</div>
-                                <input type="file" id="file-input" accept="image/*" class="hidden">
-                                <img id="preview" class="mt-2 max-h-48" style="display:none;">
-                            </div>
-                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">업로드</button>
-                        </form>
-                    </div>
-                </section>
-            `
-        };
-
-        function loadContent(page) {
-            mainContent.innerHTML = pageContents[page] || pageContents.portfolio;
-            navLinks.forEach(link => {
-                if (link.dataset.page === page) link.classList.add('nav-active');
-                else link.classList.remove('nav-active');
-            });
-
-            if (page === 'add-project') {
-                const dropZone = document.getElementById('drop-zone');
-                const fileInput = document.getElementById('file-input');
-                const preview = document.getElementById('preview');
-                const form = document.getElementById('project-form');
-
-                dropZone.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    dropZone.classList.add('dragover');
-                });
-
-                dropZone.addEventListener('dragleave', () => {
-                    dropZone.classList.remove('dragover');
-                });
-
-                dropZone.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    dropZone.classList.remove('dragover');
-                    const file = e.dataTransfer.files[0];
-                    handleFile(file);
-                });
-
-                dropZone.addEventListener('click', () => fileInput.click());
-
-                fileInput.addEventListener('change', (e) => {
-                    const file = e.target.files[0];
-                    handleFile(file);
-                });
-
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const title = document.getElementById('project-title').value;
-                    const content = document.getElementById('project-content').value;
-                    const image = preview.src || 'https://placehold.co/600x400/ffffff?text=No+Image';
-
-                    const newProject = {
-                        id: Date.now(),
-                        title,
-                        content,
-                        image
-                    };
-                    projects.push(newProject);
-                    loadContent('portfolio');
-                });
-            }
-        }
-
-        function handleFile(file) {
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    document.getElementById('preview').src = e.target.result;
-                    document.getElementById('preview').style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function deleteProject(id) {
-            projects = projects.filter(project => project.id !== id);
-            loadContent('portfolio');
-        }
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const page = link.dataset.page;
-                loadContent(page);
-            });
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            loadContent('portfolio');
-        });
-    </script>
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4">
+        <div id="modal-content" class="bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-full overflow-y-auto">
+            <!-- Modal content will be injected here -->
+        </div>
+    </div>

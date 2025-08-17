@@ -1,0 +1,34 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+.nav-active {
+    background-color: #4a5568;
+}
+.drop-zone {
+    border: 2px dashed #4a5568;
+    padding: 20px;
+    text-align: center;
+    background: #edf2f7;
+}
+.drop-zone.dragover {
+    background: #e2e8f0;
+    border-color: #2b6cb0;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+#modal {
+    display: flex;
+}
