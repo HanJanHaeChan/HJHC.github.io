@@ -57,6 +57,21 @@
             font-weight: bold;
             letter-spacing: 0.2em;
         }
+        .tilt-card {
+        background: #112240; /* About 섹션 배경과 동일 */
+        border-radius: 15px;
+        padding: 20px;
+        width: 300px;
+        height: 400px;
+        margin: 20px auto;
+        perspective: 1000px;
+        }
+        .tilt-card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
     </style>
 </head>
 <body class="bg-dark-blue text-light-slate">
@@ -180,6 +195,11 @@
                         <p class="mb-4 text-light-slate">
                             그리고 뭐 특별한 이벤트나 프로젝트도 업로드해볼게용!
                         </p>
+                        <div class="tilt-card">
+                            <img src="your-image.jpg" alt="Tilted Card">
+                            <h3 class="text-light-slate mt-4">Tilted Example</h3>
+                            <p class="text-gray-400">Interactive card demo.</p>
+                        </div>
                     </div>
                 </section>
             `,
@@ -236,5 +256,7 @@
             loadContent('portfolio');
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
 </body>
 </html>
