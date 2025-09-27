@@ -70,7 +70,7 @@
             <nav id="main-nav">
                 <ul class="flex space-x-8 text-lg">
                     <li><a href="#about" data-page="about" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">01. About</a></li>
-                    <li><a href="#work" data-page="work" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">02. Work</a></li>
+                    <li><a href="#bio" data-page="bio" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">02. bio</a></li>
                     <li><a href="#pictures" data-page="pictures" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">03. pictures</a></li>
                     <li><a href="#contact" data-page="contact" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">04. Contact</a></li>
                     <li><a href="/resume.pdf" class="get-in-touch-button" target="_blank">Resume</a></li>
@@ -112,8 +112,8 @@
 
         // 각 페이지에 해당하는 HTML 콘텐츠를 객체로 관리합니다.
         const pageContents = {
-            work: `
-                <section id="work" class="max-w-4xl mx-auto">
+            bio: `
+                <section id="bio" class="max-w-4xl mx-auto">
                     <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">02. Where I've Worked</h2>
                     <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
                         <p class="mb-4 text-light-slate">
@@ -177,17 +177,6 @@
                         <p class="mb-4 text-light-slate">
                             이 사이트는 제가 직접 찍은 멋?진 사진들 추려서 올릴게염
                         </p>
-                        <p class="text-light-slate">
-                            Here are a few technologies I’ve been working with recently:
-                        </p>
-                        <ul class="grid grid-cols-2 gap-2 mt-4 text-accent-green">
-                            <li>JavaScript (ES6+)</li>
-                            <li>React</li>
-                            <li>Next.js</li>
-                            <li>Node.js</li>
-                            <li>TypeScript</li>
-                            <li>WordPress</li>
-                        </ul>
                     </div>
                 </section>
             `,
@@ -205,7 +194,7 @@
                 <section id="hero" class="min-h-[calc(100vh-100px)] flex flex-col justify-center items-start max-w-4xl mx-auto pt-20">
                     <p class="text-accent-green text-lg font-mono mb-4">Hello Everyone! My Name Is</p>
                     <h1 class="text-7xl font-bold text-light-slate mb-4">Haechan An</h1>
-                    <h2 class="text-7xl font-bold text-gray-400 mb-6">and Welcome to my small project!</h2>
+                    <h2 class="text-7xl font-bold text-gray-400 mb-6">Archive of My </h2>
                     <p class="text-lg max-w-2xl text-gray-400 mb-12">
                         I am very interested in network and cybersecurity among computer science. 
                     </p>
