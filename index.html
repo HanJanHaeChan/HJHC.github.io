@@ -7,29 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
-        /* Inter 폰트 적용 */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* 활성화된 메뉴 스타일 */
         .nav-active {
-            color: #00bcd4; /* Brighter accent for active link */
+            color: #00bcd4;
         }
-        /* Custom styles to match the provided image */
         .bg-dark-blue {
-            background-color: #0a192f; /* Deeper dark blue for background */
+            background-color: #0a192f;
         }
         .text-light-slate {
-            color: #ccd6f6; /* Light gray-blue for main text */
+            color: #ccd6f6;
         }
         .text-accent-green {
-            color: #64ffda; /* Bright green for accents */
+            color: #64ffda;
         }
         .border-accent-green {
             border-color: #64ffda;
         }
         .hover-bg-darker-blue:hover {
-            background-color: #112240; /* Slightly lighter dark blue on hover */
+            background-color: #112240;
         }
         .hover-text-accent-green:hover {
             color: #64ffda;
@@ -42,9 +39,8 @@
             transition: all 0.2s ease-in-out;
         }
         .get-in-touch-button:hover {
-            background-color: rgba(100, 255, 218, 0.1); /* Light green overlay on hover */
+            background-color: rgba(100, 255, 218, 0.1);
         }
-        /* Style for the vertical name on the right */
         .vertical-text {
             writing-mode: vertical-rl;
             text-orientation: mixed;
@@ -52,7 +48,7 @@
             position: absolute;
             right: 2rem;
             bottom: 4rem;
-            color: rgba(204, 214, 246, 0.2); /* Faded light-slate */
+            color: rgba(204, 214, 246, 0.2);
             font-size: 1.5rem;
             font-weight: bold;
             letter-spacing: 0.2em;
@@ -119,9 +115,7 @@
     </style>
 </head>
 <body class="bg-dark-blue text-light-slate">
-
     <div class="flex flex-col md:flex-row min-h-screen">
-
         <header class="w-full bg-dark-blue p-6 flex justify-between items-center fixed top-0 left-0 right-0 z-10 shadow-md">
             <div class="text-accent-green font-bold text-3xl">
                 Hanjan_Haechan
@@ -136,7 +130,6 @@
                 </ul>
             </nav>
         </header>
-
         <div class="fixed left-8 bottom-0 hidden md:flex flex-col items-center space-y-6 z-20">
             <a href="https://www.linkedin.com/in/haechan-an" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="LinkedIn Profile">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.118-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
@@ -155,29 +148,18 @@
             </a>
             <div class="w-px h-24 bg-light-slate"></div>
         </div>
-
-        <main id="main-content" class="w-full p-8 md:p-12 pt-28 overflow-y-auto">
-        </main>
-
-        <div class="vertical-text">
-            Haechan An
-        </div>
+        <main id="main-content" class="w-full p-8 md:p-12 pt-28 overflow-y-auto"></main>
+        <div class="vertical-text">Haechan An</div>
     </div>
-
     <script>
-        // 메인 콘텐츠 영역과 네비게이션 링크들을 가져옵니다.
         const mainContent = document.getElementById('main-content');
         const navLinks = document.querySelectorAll('.nav-link');
-
-        // 각 페이지에 해당하는 HTML 콘텐츠를 객체로 관리합니다.
         const pageContents = {
             bio: `
                 <section id="bio" class="max-w-4xl mx-auto">
                     <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">Where I've Worked</h2>
                     <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
-                        <p class="mb-4 text-light-slate">
-                            Details about work experience will go here.
-                        </p>
+                        <p class="mb-4 text-light-slate">Details about work experience will go here.</p>
                         <ul class="list-disc list-inside text-light-slate space-y-2">
                             <li>Company A - Software Engineer (Jan 2023 - Present)</li>
                             <li>Company B - Intern Developer (Summer 2022)</li>
@@ -241,15 +223,13 @@
                         <div class="tilt-card-overlay">Kendrick Lamar - GNX</div>
                         <figcaption class="tilt-card-caption">Kendrick Lamar - GNX</figcaption>
                     </div>
-                </div>
+                </section>
             `,
             contact: `
                 <section id="contact" class="max-w-xl mx-auto text-center">
                     <h2 class="text-accent-green text-xl font-semibold mb-4">What’s Next?</h2>
                     <h3 class="text-5xl font-bold mb-4 text-light-slate">Get In Touch</h3>
-                    <p class="mb-8 text-light-slate">
-                        Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-                    </p>
+                    <p class="mb-8 text-light-slate">Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!</p>
                     <a href="mailto:haechan.an@example.com" class="get-in-touch-button">Say Hello</a>
                 </section>
             `,
@@ -258,20 +238,13 @@
                     <p class="text-accent-green text-lg font-mono mb-4">Hello Everyone! My Name Is</p>
                     <h1 class="text-7xl font-bold text-light-slate mb-4">Haechan An</h1>
                     <h2 class="text-7xl font-bold text-gray-400 mb-6">Archive of My </h2>
-                    <p class="text-lg max-w-2xl text-gray-400 mb-12">
-                        I am very interested in network and cybersecurity among computer science. 
-                    </p>
+                    <p class="text-lg max-w-2xl text-gray-400 mb-12">I am very interested in network and cybersecurity among computer science.</p>
                     <a href="mailto:haechan.an@example.com" class="get-in-touch-button">Get In Touch</a>
                 </section>
             `
         };
-
-        // 페이지 콘텐츠를 로드하고 렌더링하는 함수
         function loadContent(page) {
-            // main-content 영역의 내용을 해당 페이지의 HTML로 교체합니다.
             mainContent.innerHTML = pageContents[page] || pageContents.portfolio;
-
-            // 현재 활성화된 링크를 표시하는 로직
             navLinks.forEach(link => {
                 if (link.dataset.page === page) {
                     link.classList.add('nav-active');
@@ -280,24 +253,58 @@
                 }
             });
             initTilt();
+            initMotion();
         }
-
-        function initTilt() { // VanillaTilt 초기화 함수
+        function initTilt() {
             const tiltElements = document.querySelectorAll('.tilt-card');
-            tiltElements.forEach(el => VanillaTilt.init(el, { max: 25, speed: 400, glare: true }));
+            tiltElements.forEach(el => VanillaTilt.init(el, { max: 12, speed: 400, glare: true }));
         }
+        function initMotion() {
+            const tiltCard = document.querySelector('.tilt-card');
+            const caption = document.querySelector('.tilt-card-caption');
+            const overlay = document.querySelector('.tilt-card-overlay');
+            if (!tiltCard || !caption || !overlay) return;
 
-        // 각 네비게이션 링크에 클릭 이벤트 리스너를 추가합니다.
+            const { animate, spring } = Motion;
+            let lastY = 0;
+
+            tiltCard.addEventListener('mousemove', (e) => {
+                const rect = tiltCard.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left - rect.width / 2;
+                const offsetY = e.clientY - rect.top - rect.height / 2;
+
+                animate(tiltCard.querySelector('.tilt-card-inner'), { scale: 1.2 }, { duration: 0.3 });
+                animate(caption, { opacity: 1 }, { duration: 0.3 });
+                animate(overlay, { opacity: 1 }, { duration: 0.3 });
+
+                const velocityY = offsetY - lastY;
+                animate(caption, {
+                    x: e.clientX - rect.left,
+                    y: e.clientY - rect.top,
+                    rotate: -velocityY * 0.6
+                }, { duration: 0.3, ease: spring({ stiffness: 350, damping: 30, mass: 1 }) });
+                lastY = offsetY;
+            });
+
+            tiltCard.addEventListener('mouseenter', () => {
+                animate(tiltCard.querySelector('.tilt-card-inner'), { scale: 1.2 }, { duration: 0.3 });
+                animate(caption, { opacity: 1 }, { duration: 0.3 });
+                animate(overlay, { opacity: 1 }, { duration: 0.3 });
+            });
+
+            tiltCard.addEventListener('mouseleave', () => {
+                animate(tiltCard.querySelector('.tilt-card-inner'), { scale: 1 }, { duration: 0.3 });
+                animate(caption, { opacity: 0, x: 0, y: 0, rotate: 0 }, { duration: 0.3 });
+                animate(overlay, { opacity: 0 }, { duration: 0.3 });
+            });
+        }
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
-                // a 태그의 기본 동작(페이지 이동)을 막습니다.
                 event.preventDefault();
                 const page = link.dataset.page;
                 loadContent(page);
             });
         });
-
-        // 웹사이트가 처음 로드될 때 'portfolio' 페이지를 기본으로 보여줍니다.
         window.addEventListener('DOMContentLoaded', () => {
             loadContent('portfolio');
         });
