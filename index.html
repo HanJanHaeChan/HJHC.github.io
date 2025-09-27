@@ -4,207 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 포트폴리오</title>
-    <!-- Tailwind CSS CDN 로드 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <style>
+        /* Inter 폰트 적용 */
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* 활성화된 메뉴 스타일 */
         .nav-active {
-            background-color: #4a5568;
+            color: #00bcd4; /* Brighter accent for active link */
         }
-        .drop-zone {
-            border: 2px dashed #4a5568;
-            padding: 20px;
-            text-align: center;
-            background: #edf2f7;
+        /* Custom styles to match the provided image */
+        .bg-dark-blue {
+            background-color: #0a192f; /* Deeper dark blue for background */
         }
-        .drop-zone.dragover {
-            background: #e2e8f0;
-            border-color: #2b6cb0;
+        .text-light-slate {
+            color: #ccd6f6; /* Light gray-blue for main text */
+        }
+        .text-accent-green {
+            color: #64ffda; /* Bright green for accents */
+        }
+        .border-accent-green {
+            border-color: #64ffda;
+        }
+        .hover-bg-darker-blue:hover {
+            background-color: #112240; /* Slightly lighter dark blue on hover */
+        }
+        .hover-text-accent-green:hover {
+            color: #64ffda;
+        }
+        .get-in-touch-button {
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .get-in-touch-button:hover {
+            background-color: rgba(100, 255, 218, 0.1); /* Light green overlay on hover */
+        }
+        /* Style for the vertical name on the right */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            position: absolute;
+            right: 2rem;
+            bottom: 4rem;
+            color: rgba(204, 214, 246, 0.2); /* Faded light-slate */
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-dark-blue text-light-slate">
 
     <div class="flex flex-col md:flex-row min-h-screen">
-        <!-- 왼쪽 사이드바 (작은 창) -->
-        <aside class="w-full md:w-1/4 lg:w-1/5 bg-[#2d3748] text-white p-8 sticky top-0 h-screen flex flex-col">
-            <div class="text-center mb-12">
-                <img src="https://placehold.co/120x120/e2e8f0/2d3748?text=ME" alt="프로필 이미지" class="rounded-full w-32 h-32 mx-auto mb-4 border-4 border-gray-400">
-                <h1 class="text-2xl font-bold">이름</h1>
-                <p class="text-sm text-gray-400">웹 개발자</p>
+
+        <header class="w-full bg-dark-blue p-6 flex justify-between items-center fixed top-0 left-0 right-0 z-10 shadow-md">
+            <div class="text-accent-green font-bold text-3xl">
+                Hanjan_Haechan
             </div>
-            <nav id="main-nav" class="flex-grow">
-                <ul class="space-y-4">
-                    <li><a href="#" data-page="portfolio" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">PORTFOLIO</a></li>
-                    <li><a href="#" data-page="about" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ABOUT</a></li>
-                    <li><a href="#" data-page="contact" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">CONTACT</a></li>
-                    <li><a href="#" data-page="add-project" class="nav-link block py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-semibold">ADD PROJECT</a></li>
+            <nav id="main-nav">
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="#about" data-page="about" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">01. About</a></li>
+                    <li><a href="#work" data-page="work" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">02. Work</a></li>
+                    <li><a href="#projects" data-page="projects" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">03. Projects</a></li>
+                    <li><a href="#contact" data-page="contact" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">04. Contact</a></li>
+                    <li><a href="/resume.pdf" class="get-in-touch-button" target="_blank">Resume</a></li>
                 </ul>
             </nav>
-            <div class="text-center text-sm">
-                <p>© 2025 Your Name. All Rights Reserved.</p>
-            </div>
-        </aside>
+        </header>
 
-        <main id="main-content" class="w-full md:w-3/4 lg:w-4/5 p-8 md:p-12 overflow-y-auto">
-            <!-- 초기 콘텐츠가 여기에 로드됩니다. -->
+        <div class="fixed left-8 bottom-0 hidden md:flex flex-col items-center space-y-6 z-20">
+            <a href="https://www.linkedin.com/in/haechan-an" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="LinkedIn Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.118-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+            <a href="https://github.com/hanjanhaechan" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="GitHub Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.409 2.865 8.14 6.839 9.488.5.092.682-.217.682-.483 0-.237-.007-.866-.012-1.693-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.829.091-.645.351-1.087.636-1.338-2.22-.253-4.555-1.113-4.555-4.93 0-1.087.389-1.979 1.029-2.673-.103-.252-.446-1.266.098-2.635 0 0 .84-.268 2.75 1.021A9.582 9.582 0 0112 5.688c.85.008 1.7.11 2.503.324 1.909-1.289 2.747-1.021 2.747-1.021.546 1.369.202 2.383.099 2.635.64.694 1.028 1.586 1.028 2.673 0 3.829-2.339 4.673-4.566 4.922.359.307.678.915.678 1.846 0 1.33-.012 2.41-.012 2.737 0 .267.18.579.688.482C21.137 20.198 24 16.467 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="https://x.com/haechan_an" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="X Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.484 0-6.315 2.83-6.315 6.315 0 .495.056.974.138 1.434-5.257-.264-9.919-2.783-13.04-6.6-.547.937-.86 2.022-.86 3.172 0 2.181 1.115 4.102 2.808 5.234-.824-.025-1.597-.252-2.275-.623v.08c0 3.064 2.181 5.617 5.071 6.195-.53.144-1.088.225-1.657.225-.407 0-.806-.038-1.192-.116.805 2.509 3.13 4.336 5.923 4.385-2.165 1.7-4.896 2.716-7.87 2.716-.511 0-1.012-.03-1.5-.088 2.784 1.795 6.084 2.84 9.667 2.84 11.536 0 17.808-9.563 17.808-17.817 0-.272-.006-.543-.016-.814.93-.674 1.738-1.517 2.378-2.476z"></path></svg>
+            </a>
+            <a href="https://wa.me/1234567890" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="WhatsApp Contact">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.687-3.833-1.687-6.033c0-6.096 4.965-11.053 11.047-11.053 2.948 0 5.688 1.15 7.771 3.23c2.083 2.079 3.228 4.819 3.228 7.766s-1.144 5.687-3.228 7.766c-2.083 2.079-4.823 3.23-7.771 3.23h-.009l-1.687 6.163zm11.047-23.714c-5.529 0-10.047 4.519-10.047 10.053 0 2.035.615 3.96 1.77 5.56l-1.621 5.903 6.012-1.619c1.55-.421 3.2-1.037 4.793-1.854 4.532-2.33 7.42-6.953 7.42-11.99s-2.888-9.66-7.42-11.99c-4.593-2.373-10.155-2.373-14.748 0z"></path></svg>
+            </a>
+            <a href="mailto:haechan.an@example.com" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="Email Contact">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.097 4.903a.75.75 0 0 1 .841.543l.003.004.004.01.003.008.002.005a23.318 23.318 0 0 1 3.483 5.216.75.75 0 0 1-1.35.706 21.812 21.812 0 0 0-2.986-4.813l-.002-.003-.003-.004a.75.75 0 0 1 .543-.841Zm-2.32 1.63a.75.75 0 0 1 .75-.057l.007.003 4.5 1.5a.75.75 0 0 1 .184 1.342l-4.5 2.25a.75.75 0 0 1-1.025-.875l.004-.009.99-1.982-2.13-1.065a.75.75 0 0 1-.057-.75Zm-2.83.825a.75.75 0 0 1 .84-.543l.004.002.008.004.01.004.005.002a23.315 23.315 0 0 1 3.484 5.216.75.75 0 0 1-1.35.706A21.816 21.816 0 0 0 8.21 8.94l-.003-.004a.75.75 0 0 1 .543-.84Z"></path></svg>
+            </a>
+            <div class="w-px h-24 bg-light-slate"></div>
+        </div>
+
+        <main id="main-content" class="w-full p-8 md:p-12 pt-28 overflow-y-auto">
         </main>
+
+        <div class="vertical-text">
+            Haechan An
+        </div>
     </div>
 
     <script>
+        // 메인 콘텐츠 영역과 네비게이션 링크들을 가져옵니다.
         const mainContent = document.getElementById('main-content');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        let projects = [
-            { id: 1, title: "프로젝트 제목 1", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/a0aec0/ffffff?text=Project+1" },
-            { id: 2, title: "프로젝트 제목 2", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/718096/ffffff?text=Project+2" },
-            { id: 3, title: "프로젝트 제목 3", content: "프로젝트에 대한 간단한 설명입니다.", image: "https://placehold.co/600x400/4a5568/ffffff?text=Project+3" }
-        ];
-
+        // 각 페이지에 해당하는 HTML 콘텐츠를 객체로 관리합니다.
         const pageContents = {
-            portfolio: `
-                <section id="portfolio">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">Portfolio</h2>
-                    <div id="project-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        ${projects.map(project => `
-                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                                <img src="${project.image}" alt="${project.title} 이미지" class="w-full h-48 object-cover">
-                                <div class="p-6">
-                                    <h3 class="text-xl font-semibold mb-2">${project.title}</h3>
-                                    <p class="text-gray-600">${project.content}</p>
-                                    <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600" onclick="deleteProject(${project.id})">삭제</button>
-                                </div>
+            work: `
+                <section id="work" class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">02. Where I've Worked</h2>
+                    <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
+                        <p class="mb-4 text-light-slate">
+                            Details about work experience will go here.
+                        </p>
+                        <ul class="list-disc list-inside text-light-slate space-y-2">
+                            <li>Company A - Software Engineer (Jan 2023 - Present)</li>
+                            <li>Company B - Intern Developer (Summer 2022)</li>
+                        </ul>
+                    </div>
+                </section>
+            `,
+            projects: `
+                <section id="projects" class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">03. Some Things I've Built</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-[#112240] rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/112240/64ffda?text=Project+1" alt="프로젝트 1 이미지" class="w-full h-48 object-cover opacity-70">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-light-slate">프로젝트 제목 1</h3>
+                                <p class="text-gray-400 text-sm">A brief description of project 1.</p>
+                                <ul class="flex flex-wrap gap-2 mt-4 text-xs text-accent-green">
+                                    <li>#React</li>
+                                    <li>#TailwindCSS</li>
+                                    <li>#Firebase</li>
+                                </ul>
                             </div>
-                        `).join('')}
+                        </div>
+                        <div class="bg-[#112240] rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/112240/64ffda?text=Project+2" alt="프로젝트 2 이미지" class="w-full h-48 object-cover opacity-70">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-light-slate">프로젝트 제목 2</h3>
+                                <p class="text-gray-400 text-sm">A brief description of project 2.</p>
+                                <ul class="flex flex-wrap gap-2 mt-4 text-xs text-accent-green">
+                                    <li>#NextJS</li>
+                                    <li>#NodeJS</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-[#112240] rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/112240/64ffda?text=Project+3" alt="프로젝트 3 이미지" class="w-full h-48 object-cover opacity-70">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-light-slate">프로젝트 제목 3</h3>
+                                <p class="text-gray-400 text-sm">A brief description of project 3.</p>
+                                <ul class="flex flex-wrap gap-2 mt-4 text-xs text-accent-green">
+                                    <li>#VueJS</li>
+                                    <li>#RESTfulAPI</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </section>
             `,
             about: `
-                <section id="about">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">About Me</h2>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="mb-4">안녕하세요! 저는 창의적인 문제 해결을 즐기는 웹 개발자입니다.</p>
-                        <p>주로 사용하는 기술은 HTML, CSS, JavaScript입니다.</p>
+                <section id="about" class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">01. About Me</h2>
+                    <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
+                        <p class="mb-4 text-light-slate">
+                            Hello! My name is Haechan An and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+                        </p>
+                        <p class="mb-4 text-light-slate">
+                            Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
+                        </p>
+                        <p class="text-light-slate">
+                            Here are a few technologies I’ve been working with recently:
+                        </p>
+                        <ul class="grid grid-cols-2 gap-2 mt-4 text-accent-green">
+                            <li>JavaScript (ES6+)</li>
+                            <li>React</li>
+                            <li>Next.js</li>
+                            <li>Node.js</li>
+                            <li>TypeScript</li>
+                            <li>WordPress</li>
+                        </ul>
                     </div>
                 </section>
             `,
             contact: `
-                <section id="contact">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">Contact</h2>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <p class="mb-4">문의사항이 있다면 연락 주세요.</p>
-                        <ul class="space-y-2"><li><span>email@example.com</span></li><li><span>010-1234-5678</span></li></ul>
-                    </div>
+                <section id="contact" class="max-w-xl mx-auto text-center">
+                    <h2 class="text-accent-green text-xl font-semibold mb-4">04. What’s Next?</h2>
+                    <h3 class="text-5xl font-bold mb-4 text-light-slate">Get In Touch</h3>
+                    <p class="mb-8 text-light-slate">
+                        Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+                    </p>
+                    <a href="mailto:haechan.an@example.com" class="get-in-touch-button">Say Hello</a>
                 </section>
             `,
-            'add-project': `
-                <section id="add-project">
-                    <h2 class="text-3xl font-bold border-b-4 border-blue-500 pb-2 mb-8">새 프로젝트 추가</h2>
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <form id="project-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">제목</label>
-                                <input type="text" id="project-title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">내용</label>
-                                <textarea id="project-content" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" rows="3"></textarea>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700">사진 업로드</label>
-                                <div id="drop-zone" class="drop-zone mt-1">드래그하거나 클릭해서 파일 선택</div>
-                                <input type="file" id="file-input" accept="image/*" class="hidden">
-                                <img id="preview" class="mt-2 max-h-48" style="display:none;">
-                            </div>
-                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">업로드</button>
-                        </form>
-                    </div>
+            portfolio: `
+                <section id="hero" class="min-h-[calc(100vh-100px)] flex flex-col justify-center items-start max-w-4xl mx-auto pt-20">
+                    <p class="text-accent-green text-lg font-mono mb-4">Hello Everyone! My Name Is</p>
+                    <h1 class="text-7xl font-bold text-light-slate mb-4">Haechan An</h1>
+                    <h2 class="text-7xl font-bold text-gray-400 mb-6">and Welcome to my small project!</h2>
+                    <p class="text-lg max-w-2xl text-gray-400 mb-12">
+                        I am very interested in network and cybersecurity among computer science. 
+                    </p>
+                    <a href="mailto:haechan.an@example.com" class="get-in-touch-button">Get In Touch</a>
                 </section>
             `
         };
 
+        // 페이지 콘텐츠를 로드하고 렌더링하는 함수
         function loadContent(page) {
+            // main-content 영역의 내용을 해당 페이지의 HTML로 교체합니다.
             mainContent.innerHTML = pageContents[page] || pageContents.portfolio;
+
+            // 현재 활성화된 링크를 표시하는 로직
             navLinks.forEach(link => {
-                if (link.dataset.page === page) link.classList.add('nav-active');
-                else link.classList.remove('nav-active');
+                if (link.dataset.page === page) {
+                    link.classList.add('nav-active');
+                } else {
+                    link.classList.remove('nav-active');
+                }
             });
-
-            if (page === 'add-project') {
-                const dropZone = document.getElementById('drop-zone');
-                const fileInput = document.getElementById('file-input');
-                const preview = document.getElementById('preview');
-                const form = document.getElementById('project-form');
-
-                dropZone.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    dropZone.classList.add('dragover');
-                });
-
-                dropZone.addEventListener('dragleave', () => {
-                    dropZone.classList.remove('dragover');
-                });
-
-                dropZone.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    dropZone.classList.remove('dragover');
-                    const file = e.dataTransfer.files[0];
-                    handleFile(file);
-                });
-
-                dropZone.addEventListener('click', () => fileInput.click());
-
-                fileInput.addEventListener('change', (e) => {
-                    const file = e.target.files[0];
-                    handleFile(file);
-                });
-
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const title = document.getElementById('project-title').value;
-                    const content = document.getElementById('project-content').value;
-                    const image = preview.src || 'https://placehold.co/600x400/ffffff?text=No+Image';
-
-                    const newProject = {
-                        id: Date.now(),
-                        title,
-                        content,
-                        image
-                    };
-                    projects.push(newProject);
-                    loadContent('portfolio');
-                });
-            }
         }
 
-        function handleFile(file) {
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    document.getElementById('preview').src = e.target.result;
-                    document.getElementById('preview').style.display = 'block';
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        function deleteProject(id) {
-            projects = projects.filter(project => project.id !== id);
-            loadContent('portfolio');
-        }
-
+        // 각 네비게이션 링크에 클릭 이벤트 리스너를 추가합니다.
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
+                // a 태그의 기본 동작(페이지 이동)을 막습니다.
                 event.preventDefault();
                 const page = link.dataset.page;
                 loadContent(page);
             });
         });
 
+        // 웹사이트가 처음 로드될 때 'portfolio' 페이지를 기본으로 보여줍니다.
         window.addEventListener('DOMContentLoaded', () => {
             loadContent('portfolio');
         });
     </script>
+</body>
+</html>
