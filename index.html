@@ -58,21 +58,63 @@
             letter-spacing: 0.2em;
         }
         .tilt-card {
-        background: transparent; /* 또는 #0a192f로 설정 */
-        border: none; /* 연파란색 경계 제거 */
-        border-radius: 15px;
-        padding: 20px;
-        width: 500px;
-        height: 500px;
-        margin: 20px auto;
-        perspective: 1000px;
-        position: relative; /* 배경 위 독립 배치 */
+            position: relative;
+            width: 300px;
+            height: 300px;
+            perspective: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            background: transparent;
+            border: none;
         }
-        .tilt-card img {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-          border-radius: 10px;
+        .tilt-card-inner {
+            position: relative;
+            transform-style: preserve-3d;
+            width: 300px;
+            height: 300px;
+        }
+        .tilt-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        .tilt-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(100, 255, 218, 0.2);
+            color: #ccd6f6;
+            font-size: 14px;
+            z-index: 2;
+            will-change: transform;
+            transform: translateZ(30px);
+        }
+        .tilt-card-caption {
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 4px;
+            background-color: rgba(204, 214, 246, 0.9);
+            padding: 4px 10px;
+            font-size: 10px;
+            color: #0a192f;
+            opacity: 0;
+            z-index: 3;
         }
     </style>
 </head>
@@ -188,21 +230,17 @@
                 <section id="about" class="max-w-4xl mx-auto">
                     <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">About Me</h2>
                     <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
-                        <p class="mb-4 text-light-slate">
-                            안녕하세요. 저는 안해찬입니다. 저는 현재 사이버 보안을 공부하고 있고 네트워크와 각종 컴퓨터 공학에 관심이 많아요!!
-                        </p>
-                        <p class="mb-4 text-light-slate">
-                            이 사이트에는 제가 직접 찍은 멋?진 사진들 추려서 올릴게용
-                        </p>
-                        <p class="mb-4 text-light-slate">
-                            그리고 뭐 특별한 이벤트나 프로젝트도 업로드해볼게용!
-                        </p>
+                        <p class="mb-4 text-light-slate">안녕하세요. 저는 안해찬입니다. 저는 현재 사이버 보안을 공부하고 있고 네트워크와 각종 컴퓨터 공학에 관심이 많아요!!</p>
+                        <p class="mb-4 text-light-slate">이 사이트에는 제가 직접 찍은 멋?진 사진들 추려서 올릴게용</p>
+                        <p class="mb-4 text-light-slate">그리고 뭐 특별한 이벤트나 프로젝트도 업로드해볼게용!</p>
                     </div>
                 </section>
                 <div class="tilt-card">
-                    <img src="your-image.jpg" alt="Tilted Card">
-                    <h3 class="text-light-slate mt-4">Tilted Example</h3>
-                    <p class="text-gray-400">Interactive card demo.</p>
+                    <div class="tilt-card-inner">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58" alt="Kendrick Lamar - GNX Album Cover" class="tilt-card-img">
+                        <div class="tilt-card-overlay">Kendrick Lamar - GNX</div>
+                        <figcaption class="tilt-card-caption">Kendrick Lamar - GNX</figcaption>
+                    </div>
                 </div>
             `,
             contact: `
