@@ -241,6 +241,12 @@
                     link.classList.remove('nav-active');
                 }
             });
+            initTilt();
+        }
+
+        function initTilt() { // VanillaTilt 초기화 함수
+            const tiltElements = document.querySelectorAll('.tilt-card');
+            tiltElements.forEach(el => VanillaTilt.init(el, { max: 25, speed: 400, glare: true }));
         }
 
         // 각 네비게이션 링크에 클릭 이벤트 리스너를 추가합니다.
