@@ -226,7 +226,7 @@
             initTilt();
             initMotion();
         }
-        function initTilt() {
+        function initTilt() { //tilt assignment
             const tiltElements = document.querySelectorAll('.tilt-card');
             tiltElements.forEach(el => VanillaTilt.init(el, { max: 12, speed: 400, glare: false }));
         }
