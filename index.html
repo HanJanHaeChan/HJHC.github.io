@@ -1,0 +1,1081 @@
+<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+
+<html lang="ko">
+
+<head><html lang="ko">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><html lang="ko"><html lang="ko">
+
+    <title>Haechan An</title>
+
+    <!-- React -->    <meta charset="UTF-8">
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><head>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- GSAP -->    <title>Haechan An</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>    <meta charset="UTF-8">    <meta charset="UTF-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+
+    <!-- Tailwind -->    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+        body {
+
+            font-family: 'Inter', sans-serif;    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>    <title>Haechan An</title>    <title>Haechan An</title>
+
+            background-color: #0a192f;
+
+            color: #ccd6f6;    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+
+            margin: 0;
+
+            padding: 0;    <script src="https://cdn.tailwindcss.com"></script>    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+        }
+
+        .split-char {    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+            display: inline-block;
+
+            opacity: 0;    <style>    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+            transform: translateY(20px);
+
+        }        body {
+
+        .links-button {
+
+            border: 1px solid #64ffda;            font-family: 'Inter', sans-serif;    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+            color: #64ffda;
+
+            padding: 0.75rem 1.5rem;            background-color: #0a192f;
+
+            border-radius: 0.25rem;
+
+            transition: all 0.2s ease-in-out;            color: #ccd6f6;    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+            text-decoration: none;
+
+            display: inline-block;            margin: 0;
+
+        }
+
+        .links-button:hover {            padding: 0;    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+            background-color: rgba(100, 255, 218, 0.1);
+
+        }        }
+
+        .text-accent-green {
+
+            color: #64ffda;        .split-char {    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+
+        }
+
+        .text-light-slate {            display: inline-block;
+
+            color: #ccd6f6;
+
+        }            opacity: 0;    <script src="https://cdn.tailwindcss.com"></script>    <script src="https://cdn.tailwindcss.com"></script>
+
+    </style>
+
+</head>            transform: translateY(20px);
+
+<body>
+
+    <div id="root"></div>        }    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+    <script type="text/babel">        .links-button {
+
+        // GSAP 플러그인 등록
+
+        gsap.registerPlugin(ScrollTrigger);            border: 1px solid #64ffda;    <style>    <style>
+
+
+
+        // SplitText 컴포넌트            color: #64ffda;
+
+        const SplitText = ({
+
+            text,            padding: 0.75rem 1.5rem;        body {        body {
+
+            className = '',
+
+            delay = 100,            border-radius: 0.25rem;
+
+            duration = 0.6,
+
+            ease = 'power3.out',            transition: all 0.2s ease-in-out;            font-family: 'Inter', sans-serif;            font-family: 'Inter', sans-serif;
+
+            from = { opacity: 0, y: 40 },
+
+            to = { opacity: 1, y: 0 }            text-decoration: none;
+
+        }) => {
+
+            const ref = React.useRef(null);            display: inline-block;            background-color: #0a192f;            background-color: #0a192f;
+
+
+
+            React.useEffect(() => {        }
+
+                if (!ref.current) return;
+
+        .links-button:hover {            color: #ccd6f6;            color: #ccd6f6;
+
+                const element = ref.current;
+
+                const chars = Array.from(element.textContent).map((char, i) => {            background-color: rgba(100, 255, 218, 0.1);
+
+                    const span = document.createElement('span');
+
+                    span.textContent = char;        }            margin: 0;            margin: 0;
+
+                    span.className = 'split-char';
+
+                    return span;        .text-accent-green {
+
+                });
+
+            color: #64ffda;            padding: 0;            padding: 0;
+
+                element.textContent = '';
+
+                chars.forEach(char => element.appendChild(char));        }
+
+
+
+                gsap.fromTo(        .text-light-slate {        }        }
+
+                    element.children,
+
+                    { ...from },            color: #ccd6f6;
+
+                    {
+
+                        ...to,        }        .split-char {        .split-char {
+
+                        duration,
+
+                        ease,    </style>
+
+                        stagger: delay / 1000,
+
+                        scrollTrigger: {</head>            display: inline-block;            display: inline-block;
+
+                            trigger: element,
+
+                            start: 'top center+=100',<body>
+
+                            once: true
+
+                        }    <div id="root"></div>            opacity: 0;            opacity: 0;
+
+                    }
+
+                );
+
+            }, [text]);
+
+    <script type="text/babel">            transform: translateY(20px);            transform: translateY(20px);
+
+            return (
+
+                <div ref={ref} className={className}>        // GSAP 플러그인 등록
+
+                    {text}
+
+                </div>        gsap.registerPlugin(ScrollTrigger);        }        }
+
+            );
+
+        };
+
+
+
+        // Links 컴포넌트        // SplitText 컴포넌트        .links-button {        .links-button {
+
+        const SocialLinks = () => (
+
+            <div className="flex space-x-6 mt-8">        const SplitText = ({
+
+                <a href="https://github.com/hanjanhaechan" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">            text,            border: 1px solid #64ffda;            border: 1px solid #64ffda;
+
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+
+                    </svg>            className = '',
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/haechan-an" className="text-light-slate hover:text-accent-green">            delay = 100,            color: #64ffda;            color: #64ffda;
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>            duration = 0.6,
+
+                    </svg>
+
+                </a>            ease = 'power3.out',            padding: 0.75rem 1.5rem;            padding: 0.75rem 1.5rem;
+
+                <a href="mailto:haechan.an@example.com" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">            from = { opacity: 0, y: 40 },
+
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+
+                    </svg>            to = { opacity: 1, y: 0 }            border-radius: 0.25rem;            border-radius: 0.25rem;
+
+                </a>
+
+            </div>        }) => {
+
+        );
+
+            const ref = React.useRef(null);            transition: all 0.2s ease-in-out;            transition: all 0.2s ease-in-out;
+
+        // 메인 앱 컴포넌트
+
+        const App = () => {
+
+            return (
+
+                <div className="min-h-screen flex flex-col justify-center items-center p-4">            React.useEffect(() => {            text-decoration: none;            text-decoration: none;
+
+                    <SplitText
+
+                        text="Hello, I'm"                if (!ref.current) return;
+
+                        className="text-accent-green text-xl mb-4 font-mono"
+
+                        delay={50}            display: inline-block;            display: inline-block;
+
+                        from={{ opacity: 0, y: 30 }}
+
+                        to={{ opacity: 1, y: 0 }}                const element = ref.current;
+
+                    />
+
+                    <SplitText                const chars = Array.from(element.textContent).map((char, i) => {        }        }
+
+                        text="Haechan An"
+
+                        className="text-6xl font-bold mb-4 text-light-slate"                    const span = document.createElement('span');
+
+                        delay={30}
+
+                        from={{ opacity: 0, y: 40 }}                    span.textContent = char;        .links-button:hover {        .links-button:hover {
+
+                        to={{ opacity: 1, y: 0 }}
+
+                    />                    span.className = 'split-char';
+
+                    <SplitText
+
+                        text="Web Developer & Security Enthusiast"                    return span;            background-color: rgba(100, 255, 218, 0.1);            background-color: rgba(100, 255, 218, 0.1);
+
+                        className="text-2xl text-light-slate mb-8"
+
+                        delay={20}                });
+
+                        from={{ opacity: 0, x: -30 }}
+
+                        to={{ opacity: 1, x: 0 }}        }        }
+
+                    />
+
+                    <p className="text-light-slate max-w-md text-center mb-8 opacity-70">                element.textContent = '';
+
+                        I specialize in network security and computer engineering. 
+
+                        Currently exploring the depths of cybersecurity.                chars.forEach(char => element.appendChild(char));        .text-accent-green {        .text-accent-green {
+
+                    </p>
+
+                    <SocialLinks />
+
+                    <div className="mt-8">
+
+                        <a                gsap.fromTo(            color: #64ffda;            color: #64ffda;
+
+                            href="mailto:haechan.an@example.com"
+
+                            className="links-button"                    element.children,
+
+                        >
+
+                            Get in touch                    { ...from },        }        }
+
+                        </a>
+
+                    </div>                    {
+
+                </div>
+
+            );                        ...to,        .text-light-slate {        .text-light-slate {
+
+        };
+
+                        duration,
+
+        // 앱 렌더링
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));                        ease,            color: #ccd6f6;            color: #ccd6f6;
+
+        root.render(<App />);
+
+    </script>                        stagger: delay / 1000,
+
+</body>
+
+</html>                        scrollTrigger: {        }        }
+
+                            trigger: element,
+
+                            start: 'top center+=100',    </style>    </style>
+
+                            once: true
+
+                        }</head></head>
+
+                    }
+
+                );<body><body>
+
+            }, [text]);
+
+    <div id="root"></div>    <div id="root"></div>
+
+            return (
+
+                <div ref={ref} className={className}>
+
+                    {text}
+
+                </div>    <script type="text/babel">    <script type="text/babel">
+
+            );
+
+        };        // GSAP 플러그인 등록        // GSAP 플러그인 등록
+
+
+
+        // Links 컴포넌트        gsap.registerPlugin(ScrollTrigger);        gsap.registerPlugin(ScrollTrigger);
+
+        const SocialLinks = () => (
+
+            <div className="flex space-x-6 mt-8">
+
+                <a href="https://github.com/hanjanhaechan" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">        // SplitText 컴포넌트        // SplitText 컴포넌트
+
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+
+                    </svg>        const SplitText = ({        const SplitText = ({
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/haechan-an" className="text-light-slate hover:text-accent-green">            text,            text,
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>            className = '',            className = '',
+
+                    </svg>
+
+                </a>            delay = 100,            delay = 100,
+
+                <a href="mailto:haechan.an@example.com" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">            duration = 0.6,            duration = 0.6,
+
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+
+                    </svg>            ease = 'power3.out',            ease = 'power3.out',
+
+                </a>
+
+            </div>            from = { opacity: 0, y: 40 },            from = { opacity: 0, y: 40 },
+
+        );
+
+            to = { opacity: 1, y: 0 }            to = { opacity: 1, y: 0 }
+
+        // 메인 앱 컴포넌트
+
+        const App = () => {        }) => {        }) => {
+
+            return (
+
+                <div className="min-h-screen flex flex-col justify-center items-center p-4">            const ref = React.useRef(null);            const ref = React.useRef(null);
+
+                    <SplitText
+
+                        text="Hello, I'm"
+
+                        className="text-accent-green text-xl mb-4 font-mono"
+
+                        delay={50}            React.useEffect(() => {            React.useEffect(() => {
+
+                        from={{ opacity: 0, y: 30 }}
+
+                        to={{ opacity: 1, y: 0 }}                if (!ref.current) return;                if (!ref.current) return;
+
+                    />
+
+                    <SplitText
+
+                        text="Haechan An"
+
+                        className="text-6xl font-bold mb-4 text-light-slate"                const element = ref.current;                const element = ref.current;
+
+                        delay={30}
+
+                        from={{ opacity: 0, y: 40 }}                const chars = Array.from(element.textContent).map((char, i) => {                const chars = Array.from(element.textContent).map((char, i) => {
+
+                        to={{ opacity: 1, y: 0 }}
+
+                    />                    const span = document.createElement('span');                    const span = document.createElement('span');
+
+                    <SplitText
+
+                        text="Web Developer & Security Enthusiast"                    span.textContent = char;                    span.textContent = char;
+
+                        className="text-2xl text-light-slate mb-8"
+
+                        delay={20}                    span.className = 'split-char';                    span.className = 'split-char';
+
+                        from={{ opacity: 0, x: -30 }}
+
+                        to={{ opacity: 1, x: 0 }}                    return span;                    return span;
+
+                    />
+
+                    <p className="text-light-slate max-w-md text-center mb-8 opacity-70">                });                });
+
+                        I specialize in network security and computer engineering. 
+
+                        Currently exploring the depths of cybersecurity.
+
+                    </p>
+
+                    <SocialLinks />                element.textContent = '';                element.textContent = '';
+
+                    <div className="mt-8">
+
+                        <a                chars.forEach(char => element.appendChild(char));                chars.forEach(char => element.appendChild(char));
+
+                            href="mailto:haechan.an@example.com"
+
+                            className="links-button"
+
+                        >
+
+                            Get in touch                gsap.fromTo(                gsap.fromTo(
+
+                        </a>
+
+                    </div>                    element.children,                    element.children,
+
+                </div>
+
+            );                    { ...from },                    { ...from },
+
+        };
+
+                    {                    {
+
+        // 앱 렌더링
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));                        ...to,                        ...to,
+
+        root.render(<App />);
+
+    </script>                        duration,                        duration,
+
+</body>
+
+</html>                        ease,                        ease,
+
+                        stagger: delay / 1000,                        stagger: delay / 1000,
+
+                        scrollTrigger: {                        scrollTrigger: {
+
+                            trigger: element,                            trigger: element,
+
+                            start: 'top center+=100',                            start: 'top center+=100',
+
+                            once: true                            once: true
+
+                        }                        }
+
+                    }                    }
+
+                );                );
+
+            }, [text]);            }, [text]);
+
+
+
+            return (            return (
+
+                <div ref={ref} className={className}>                <div ref={ref} className={className}>
+
+                    {text}                    {text}
+
+                </div>                </div>
+
+            );            );
+
+        };        };
+
+
+
+        // Links 컴포넌트        // Links 컴포넌트
+
+        const SocialLinks = () => (        const SocialLinks = () => (
+
+            <div className="flex space-x-6 mt-8">            <div className="flex space-x-6 mt-8">
+
+                <a href="https://github.com/hanjanhaechan" className="text-light-slate hover:text-accent-green">                <a href="https://github.com/hanjanhaechan" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+
+                    </svg>                    </svg>
+
+                </a>                </a>
+
+                <a href="https://www.linkedin.com/in/haechan-an" className="text-light-slate hover:text-accent-green">                <a href="https://www.linkedin.com/in/haechan-an" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+
+                    </svg>                    </svg>
+
+                </a>                </a>
+
+                <a href="mailto:haechan.an@example.com" className="text-light-slate hover:text-accent-green">                <a href="mailto:haechan.an@example.com" className="text-light-slate hover:text-accent-green">
+
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+
+                    </svg>                    </svg>
+
+                </a>                </a>
+
+            </div>            </div>
+
+        );        );
+
+
+
+        // 메인 앱 컴포넌트        // 메인 앱 컴포넌트
+
+        const App = () => {        const App = () => {
+
+            return (            return (
+
+                <div className="min-h-screen flex flex-col justify-center items-center p-4">                <div className="min-h-screen flex flex-col justify-center items-center p-4">
+
+                    <SplitText                    <SplitText
+
+                        text="Hello, I'm"                        text="Hello, I'm"
+
+                        className="text-accent-green text-xl mb-4 font-mono"                        className="text-accent-green text-xl mb-4 font-mono"
+
+                        delay={50}                        delay={50}
+
+                        from={{ opacity: 0, y: 30 }}                        from={{ opacity: 0, y: 30 }}
+
+                        to={{ opacity: 1, y: 0 }}                        to={{ opacity: 1, y: 0 }}
+
+                    />                    />
+
+                    <SplitText                    <SplitText
+
+                        text="Haechan An"                        text="Haechan An"
+
+                        className="text-6xl font-bold mb-4 text-light-slate"                        className="text-6xl font-bold mb-4 text-light-slate"
+
+                        delay={30}                        delay={30}
+
+                        from={{ opacity: 0, y: 40 }}                        from={{ opacity: 0, y: 40 }}
+
+                        to={{ opacity: 1, y: 0 }}                        to={{ opacity: 1, y: 0 }}
+
+                    />                    />
+
+                    <SplitText                    <SplitText
+
+                        text="Web Developer & Security Enthusiast"                        text="Web Developer & Security Enthusiast"
+
+                        className="text-2xl text-light-slate mb-8"                        className="text-2xl text-light-slate mb-8"
+
+                        delay={20}                        delay={20}
+
+                        from={{ opacity: 0, x: -30 }}                        from={{ opacity: 0, x: -30 }}
+
+                        to={{ opacity: 1, x: 0 }}                        to={{ opacity: 1, x: 0 }}
+
+                    />                    />
+
+                    <p className="text-light-slate max-w-md text-center mb-8 opacity-70">                    <p className="text-light-slate max-w-md text-center mb-8 opacity-70">
+
+                        I specialize in network security and computer engineering.                         I specialize in network security and computer engineering. 
+
+                        Currently exploring the depths of cybersecurity.                        Currently exploring the depths of cybersecurity.
+
+                    </p>                    </p>
+
+                    <SocialLinks />                    <SocialLinks />
+
+                    <div className="mt-8">                    <div className="mt-8">
+
+                        <a                        <a
+
+                            href="mailto:haechan.an@example.com"                            href="mailto:haechan.an@example.com"
+
+                            className="links-button"                            className="links-button"
+
+                        >                        >
+
+                            Get in touch                            Get in touch
+
+                        </a>                        </a>
+
+                    </div>                    </div>
+
+                </div>                </div>
+
+            );            );
+
+        };        };
+
+
+
+        // 앱 렌더링        // 앱 렌더링
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(<App />);        root.render(<App />);
+
+    </script>    </script>
+
+</body></body>
+
+</html></html>
+    </div>
+    <script type="text/babel">
+        // GSAP 플러그인 등록
+        gsap.registerPlugin(ScrollTrigger);
+
+        // SplitText 컴포넌트
+        const SplitText = ({
+            text,
+            className = '',
+            delay = 100,
+            duration = 0.6,
+            ease = 'power3.out',
+            from = { opacity: 0, y: 40 },
+            to = { opacity: 1, y: 0 }
+        }) => {
+            const ref = React.useRef(null);
+
+            React.useEffect(() => {
+                if (!ref.current) return;
+
+                const element = ref.current;
+                const chars = Array.from(element.textContent).map((char, i) => {
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    span.className = 'split-char';
+                    return span;
+                });
+
+                element.textContent = '';
+                chars.forEach(char => element.appendChild(char));
+
+                gsap.fromTo(
+                    element.children,
+                    { ...from },
+                    {
+                        ...to,
+                        duration,
+                        ease,
+                        stagger: delay / 1000,
+                        scrollTrigger: {
+                            trigger: element,
+                            start: 'top center+=100',
+                            once: true
+                        }
+                    }
+                );
+            }, [text]);
+
+            return (
+                <div ref={ref} className={className}>
+                    {text}
+                </div>
+            );
+        };
+
+        // 메인 앱 컴포넌트
+        const App = () => {
+            return (
+                <div className="min-h-screen flex flex-col justify-center items-center p-4">
+                    <SplitText
+                        text="Haechan An"
+                        className="text-6xl font-bold mb-4 text-accent-green"
+                        delay={50}
+                        from={{ opacity: 0, y: 50 }}
+                        to={{ opacity: 1, y: 0 }}
+                    />
+                    <SplitText
+                        text="Web Developer & Security Enthusiast"
+                        className="text-2xl text-light-slate mb-8"
+                        delay={30}
+                        from={{ opacity: 0, x: -30 }}
+                        to={{ opacity: 1, x: 0 }}
+                    />
+                    <div className="mt-8">
+                        <a
+                            href="mailto:haechan.an@example.com"
+                            className="links-button"
+                        >
+                            Get in touch
+                        </a>
+                    </div>
+                </div>
+            );
+        };
+
+        // 앱 렌더링
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);   <title>Haechan An</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-active {
+            color: #00bcd4;
+        }
+        .bg-dark-blue {
+            background-color: #0a192f;
+        }
+        .text-light-slate {
+            color: #ccd6f6;
+        }
+        .text-accent-green {
+            color: #64ffda;
+        }
+        .border-accent-green {
+            border-color: #64ffda;
+        }
+        .hover-bg-darker-blue:hover {
+            background-color: #112240;
+        }
+        .hover-text-accent-green:hover {
+            color: #64ffda;
+        }
+        .links-button {
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .links-button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            position: absolute;
+            right: 2rem;
+            bottom: 4rem;
+            color: rgba(204, 214, 246, 0.2);
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+        }
+        .tilt-card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            perspective: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            background: transparent;
+            border: none;
+        }
+        .tilt-card-inner {
+            position: relative;
+            transform-style: preserve-3d;
+            width: 300px;
+            height: 300px;
+        }
+        .tilt-card-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        .text-type {
+            display: inline-block;
+            white-space: pre-wrap;
+        }
+        .text-type__cursor {
+            margin-left: 0.25rem;
+            display: inline-block;
+            opacity: 1;
+        }
+        .text-type__cursor--hidden {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body class="bg-dark-blue text-light-slate">
+    <div class="flex flex-col md:flex-row min-h-screen"> 
+        <header class="w-full bg-dark-blue p-6 flex justify-between items-center fixed top-0 left-0 right-0 z-10 shadow-md">
+            <div class="text-accent-green font-bold text-3xl">
+                Hanjan_Haechan 
+            </div> 
+            <nav id="main-nav">
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="#about" data-page="about" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">About</a></li>
+                    <li><a href="#bio" data-page="bio" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">Bio</a></li>
+                    <li><a href="#pictures" data-page="pictures" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">Pictures</a></li>
+                    <li><a href="#contact" data-page="contact" class="nav-link text-light-slate hover-text-accent-green transition-colors duration-200">Contact</a></li>
+                    <li><a href="/resume.pdf" class="links-button" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="fixed left-8 bottom-0 hidden md:flex flex-col items-center space-y-6 z-20">
+            <a href="https://www.linkedin.com/in/haechan-an" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="LinkedIn Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.118-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+            </a>
+            <a href="https://github.com/hanjanhaechan" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="GitHub Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.409 2.865 8.14 6.839 9.488.5.092.682-.217.682-.483 0-.237-.007-.866-.012-1.693-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.91.829.091-.645.351-1.087.636-1.338-2.22-.253-4.555-1.113-4.555-4.93 0-1.087.389-1.979 1.029-2.673-.103-.252-.446-1.266.098-2.635 0 0 .84-.268 2.75 1.021A9.582 9.582 0 0112 5.688c.85.008 1.7.11 2.503.324 1.909-1.289 2.747-1.021 2.747-1.021.546 1.369.202 2.383.099 2.635.64.694 1.028 1.586 1.028 2.673 0 3.829-2.339 4.673-4.566 4.922.359.307.678.915.678 1.846 0 1.33-.012 2.41-.012 2.737 0 .267.18.579.688.482C21.137 20.198 24 16.467 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="https://x.com/haechan_an" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="X Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.484 0-6.315 2.83-6.315 6.315 0 .495.056.974.138 1.434-5.257-.264-9.919-2.783-13.04-6.6-.547.937-.86 2.022-.86 3.172 0 2.181 1.115 4.102 2.808 5.234-.824-.025-1.597-.252-2.275-.623v.08c0 3.064 2.181 5.617 5.071 6.195-.53.144-1.088.225-1.657.225-.407 0-.806-.038-1.192-.116.805 2.509 3.13 4.336 5.923 4.385-2.165 1.7-4.896 2.716-7.87 2.716-.511 0-1.012-.03-1.5-.088 2.784 1.795 6.084 2.84 9.667 2.84 11.536 0 17.808-9.563 17.808-17.817 0-.272-.006-.543-.016-.814.93-.674 1.738-1.517 2.378-2.476z"></path></svg>
+            </a>
+            <a href="https://wa.me/1234567890" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="WhatsApp Contact">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.687-3.833-1.687-6.033c0-6.096 4.965-11.053 11.047-11.053 2.948 0 5.688 1.15 7.771 3.23c2.083 2.079 3.228 4.819 3.228 7.766s-1.144 5.687-3.228 7.766c-2.083 2.079-4.823 3.23-7.771 3.23h-.009l-1.687 6.163zm11.047-23.714c-5.529 0-10.047 4.519-10.047 10.053 0 2.035.615 3.96 1.77 5.56l-1.621 5.903 6.012-1.619c1.55-.421 3.2-1.037 4.793-1.854 4.532-2.33 7.42-6.953 7.42-11.99s-2.888-9.66-7.42-11.99c-4.593-2.373-10.155-2.373-14.748 0z"></path></svg>
+            </a>
+            <a href="mailto:haechan.an@example.com" class="text-light-slate hover-text-accent-green transition-colors duration-200" aria-label="Email Contact">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.097 4.903a.75.75 0 0 1 .841.543l.003.004.004.01.003.008.002.005a23.318 23.318 0 0 1 3.483 5.216.75.75 0 0 1-1.35.706 21.812 21.812 0 0 0-2.986-4.813l-.002-.003-.003-.004a.75.75 0 0 1 .543-.841Zm-2.32 1.63a.75.75 0 0 1 .75-.057l.007.003 4.5 1.5a.75.75 0 0 1 .184 1.342l-4.5 2.25a.75.75 0 0 1-1.025-.875l.004-.009.99-1.982-2.13-1.065a.75.75 0 0 1-.057-.75Zm-2.83.825a.75.75 0 0 1 .84-.543l.004.002.008.004.01.004.005.002a23.315 23.315 0 0 1 3.484 5.216.75.75 0 0 1-1.35.706A21.816 21.816 0 0 0 8.21 8.94l-.003-.004a.75.75 0 0 1 .543-.84Z"></path></svg>
+            </a>
+            <div class="w-px h-24 bg-light-slate"></div>
+        </div>
+        <main id="main-content" class="w-full p-8 md:p-12 pt-28 overflow-y-auto"></main>
+        <div class="vertical-text">Haechan An</div>
+    </div>
+    <script>
+        const mainContent = document.getElementById('main-content');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageContents = {
+            bio: `
+                <section id="bio" class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">Where I've Worked</h2>
+                    <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
+                        <p class="mb-4 text-light-slate">Details about work experience will go here.</p>
+                        <ul class="list-disc list-inside text-light-slate space-y-2">
+                            <li>Company A - Software Engineer (Jan 2023 - Present)</li>
+                            <li>Company B - Intern Developer (Summer 2022)</li>
+                        </ul>
+                    </div>
+                </section>
+            `,
+            pictures: `
+                <section id="pictures" class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">Some Things I've Built</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-[#112240] rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/112240/64ffda?text=Project+1" alt="프로젝트 1 이미지" class="w-full h-48 object-cover opacity-70">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-light-slate">프로젝트 제목 1</h3>
+                                <p class="text-gray-400 text-sm">A brief description of project 1.</p>
+                                <ul class="flex flex-wrap gap-2 mt-4 text-xs text-accent-green">
+                                    <li>#React</li>
+                                    <li>#TailwindCSS</li>
+                                    <li>#Firebase</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-[#112240] rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/112240/64ffda?text=Project+2" alt="프로젝트 2 이미지" class="w-full h-48 object-cover opacity-70">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-light-slate">프로젝트 제목 2</h3>
+                                <p class="text-gray-400 text-sm">A brief description of project 2.</p>
+                                <ul class="flex flex-wrap gap-2 mt-4 text-xs text-accent-green">
+                                    <li>#NextJS</li>
+                                    <li>#NodeJS</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-[#112240] rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/112240/64ffda?text=Project+3" alt="프로젝트 3 이미지" class="w-full h-48 object-cover opacity-70">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2 text-light-slate">프로젝트 제목 3</h3>
+                                <p class="text-gray-400 text-sm">A brief description of project 3.</p>
+                                <ul class="flex flex-wrap gap-2 mt-4 text-xs text-accent-green">
+                                    <li>#VueJS</li>
+                                    <li>#RESTfulAPI</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `,
+            about: `
+                <section id="about" class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold border-b-2 border-accent-green pb-2 mb-8 text-light-slate">About Me</h2>
+                    <div class="bg-[#112240] p-8 rounded-lg shadow-lg">
+                        <p class="mb-4 text-light-slate">안녕하세요. 저는 안해찬입니다. 저는 현재 사이버 보안을 공부하고 있고 네트워크와 각종 컴퓨터 공학에 관심이 많아요!!</p>
+                        <p class="mb-4 text-light-slate">이 사이트에는 제가 직접 찍은 멋?진 사진들 추려서 올릴게용</p>
+                        <p class="mb-4 text-light-slate">그리고 뭐 제 이벤트나 프로젝트도 업로드해볼게용!</p>
+                    </div>
+                </section>
+                <div class="tilt-card">
+                    <div class="tilt-card-inner">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58" alt="Kendrick Lamar - GNX Album Cover" class="tilt-card-img">
+                        <figcaption class="tilt-card-caption">Kendrick Lamar - GNX</figcaption>
+                    </div>
+                </div>
+            `,
+            contact: `
+                <section id="contact" class="max-w-xl mx-auto text-center">
+                    <h2 class="text-accent-green text-xl font-semibold mb-4">What’s Next?</h2>
+                    <h3 class="text-5xl font-bold mb-4 text-light-slate">HIHIHIHIHHIHIIIIIIIII</h3>
+                    <p class="mb-8 text-light-slate">helllooooooooooooooooooooooooooooooooooooooooo</p>
+                    <a href="mailto:haechan.an@example.com" class="links-button">Say Hello</a>
+                </section>
+            `,
+            portfolio: `
+                <section id="hero" class="min-h-[calc(100vh-100px)] flex flex-col justify-center items-start max-w-4xl mx-auto pt-20">
+                    <p class="text-accent-green text-lg font-mono mb-4">Hello Everyone! My Name Is</p>
+                    <h1 class="text-7xl font-bold text-light-slate mb-4">Haechan An</h1>
+                    <h2 class="text-7xl font-bold text-gray-400 mb-6">My personal website</h2>
+                    <p class="text-lg max-w-2xl text-gray-400 mb-12">I am very interested in network and cybersecurity among computer science.</p>
+                    <a href="mailto:haechan.an@example.com" class="All my links">Links</a>
+                </section>
+            `
+        };
+        function loadContent(page) {
+            mainContent.innerHTML = pageContents[page] || pageContents.portfolio;
+            navLinks.forEach(link => {
+                if (link.dataset.page === page) {
+                    link.classList.add('nav-active');
+                } else {
+                    link.classList.remove('nav-active');
+                }
+            });
+            initTilt(); //RESET TILT
+            initMotion(); //RESET MOTION
+        }
+        function initTilt() { //tilt assignment
+            const tiltElements = document.querySelectorAll('.tilt-card');
+            tiltElements.forEach(el => VanillaTilt.init(el, { max: 12, speed: 400, glare: false }));
+        }
+        function initMotion() { // motion assignment
+            const tiltCard = document.querySelector('.tilt-card');
+            const caption = document.querySelector('.tilt-card-caption');
+            const overlay = document.querySelector('.tilt-card-overlay');
+            if (!tiltCard || !caption || !overlay) return;
+
+            const { animate, spring } = Motion;
+            let lastY = 0;
+
+            tiltCard.addEventListener('mousemove', (e) => {
+                const rect = tiltCard.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left - rect.width / 2; // Center X
+                const offsetY = e.clientY - rect.top - rect.height / 2;
+
+                animate(tiltCard.querySelector('.tilt-card-inner'), { scale: 1.2 }, { duration: 0.3 });
+                animate(caption, { opacity: 1 }, { duration: 0.3 });
+                animate(overlay, { opacity: 1 }, { duration: 0.3 });
+
+                const velocityY = offsetY - lastY;
+                animate(caption, {
+                    x: e.clientX - rect.left,
+                    y: e.clientY - rect.top,
+                    rotate: -velocityY * 0.6
+                }, { duration: 0.3, ease: spring({ stiffness: 350, damping: 30, mass: 1 }) });
+                lastY = offsetY;
+            });
+
+            tiltCard.addEventListener('mouseenter', () => {
+                animate(tiltCard.querySelector('.tilt-card-inner'), { scale: 1.2 }, { duration: 0.3 });
+                animate(caption, { opacity: 1 }, { duration: 0.3 });
+                animate(overlay, { opacity: 1 }, { duration: 0.3 });
+            });
+
+            tiltCard.addEventListener('mouseleave', () => {
+                animate(tiltCard.querySelector('.tilt-card-inner'), { scale: 1 }, { duration: 0.3 });
+                animate(caption, { opacity: 0, x: 0, y: 0, rotate: 0 }, { duration: 0.3 });
+                animate(overlay, { opacity: 0 }, { duration: 0.3 });
+            });
+        }
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const page = link.dataset.page;
+                loadContent(page);
+            });
+        });
+        window.addEventListener('DOMContentLoaded', () => { //event listener
+            loadContent('portfolio');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+</body>
+</html>
